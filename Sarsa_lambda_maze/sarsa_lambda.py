@@ -17,8 +17,8 @@ class SarsaLambdaTable():
 			action=np.random.choice(self.actions) #随机选择行动
 		else:
 			state_list=self.q_table.loc[observation,:]
-			action=np.random.choice(state_list[state_list==np.max(state_list)].index)
 			# 选择Q表值最大的行动，如果存在多个最大值，则在里面随机选一个
+			action=np.random.choice(state_list[state_list==np.max(state_list)].index)
 		return action
 
 	def update_q_table(self,s,a,r,s_,a_): # 更新 Q 表

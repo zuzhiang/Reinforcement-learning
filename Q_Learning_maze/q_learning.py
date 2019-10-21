@@ -9,8 +9,7 @@ class QLearningTable():
 		self.epsilon=e_greedy
 		self.q_table=pd.DataFrame(columns=self.actions,dtype=np.float64)
 
-	def chooce_action(self,observation): #选择行动
-		print("observation=", observation)
+	def choose_action(self,observation): #选择行动
 		self.check_state_exist(observation)
 		if np.random.uniform()>self.epsilon:
 			action=np.random.choice(self.actions) #随机选择行动
